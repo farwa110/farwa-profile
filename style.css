@@ -46,6 +46,9 @@ header {
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .menu {
@@ -120,7 +123,7 @@ nav {
     display: block;
     background-color: black;
     position: absolute;
-    top: 60px;
+    top: 80px;
     left: 0;
     width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -200,7 +203,7 @@ Hero Section
   text-align: center;
 }
 .underline {
-  border: 2px solid rgba(20, 255, 236, 1);
+  border: 2px solid #14ffec;
   padding: 10px;
   height: 69%;
   display: flex;
@@ -481,4 +484,62 @@ Project Section
   .hero-box {
     margin: 0px 10px 0 10px;
   }
+}
+
+#language-btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgba(20, 255, 236, 1);
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#language-btn:hover {
+  background-color: rgba(20, 255, 236, 0.8);
+}
+
+/*
+=============== 
+footer Section
+===============
+*/
+
+footer {
+  background-image: url("assets/wave.svg"); /* Replace with your actual SVG file name */
+  background-repeat: no-repeat;
+  background-size: cover; /* Adjust to 'contain' if needed */
+  background-position: center;
+  padding: 10px 0; /* Adjust padding to fit content properly */
+  color: rgb(194, 70, 70); /* Ensure text is readable on the SVG */
+  text-align: center;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img {
+  width: 24px; /* Adjust icon size */
+  height: auto;
 }

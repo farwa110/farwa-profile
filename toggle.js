@@ -27,23 +27,34 @@ const translations = {
     valueText: "Som praktikant bringer jeg et frisk perspektiv, en positiv tilgang og kreative idéer, der kan tilføre værdi til jeres virksomhed. Min baggrund inden for frontend-udvikling sikrer, at jeg kan bidrage effektivt til at bygge engagerende, funktionelle og brugervenlige websites, mens min UX/UI-ekspertise giver mig mulighed for at forbedre brugeroplevelser med velstrukturerede og visuelt appellerende design.",
   },
 };
-
-let currentLang = "en"; // Default language
-
-function toggleLanguage() {
-  currentLang = currentLang === "en" ? "dk" : "en";
-  document.getElementById("language-btn").innerText = currentLang === "en" ? "Dansk" : "English";
-
-  document.querySelector(".menu li:nth-child(1) a").innerText = translations[currentLang].home;
-  document.querySelector(".menu li:nth-child(2) a").innerText = translations[currentLang].projects;
-  document.querySelector(".menu li:nth-child(3) a").innerText = translations[currentLang].about;
-  document.querySelector(".menu li:nth-child(4) a").innerText = translations[currentLang].contact;
-
-  document.querySelector(".hero-info h2").innerText = translations[currentLang].heroSubtitle;
-  document.querySelector(".about-container:nth-child(1) h3").innerText = translations[currentLang].whoAmI;
-  document.querySelector(".about-container:nth-child(2) h3").innerText = translations[currentLang].whatLookingFor;
-  document.querySelector(".about-container:nth-child(3) h3").innerText = translations[currentLang].howAddValue;
-  document.querySelector(".about-container .about-text").innerText = translations[currentLang].aboutText;
-  document.querySelector(".about-container .looking-for-text").innerText = translations[currentLang].lookingForText;
-  document.querySelector(".about-container .value-text").innerText = translations[currentLang].valueText;
+function updateText() {
+  const translatableElements = document.querySelectorAll(".translatable");
+  translatableElements.forEach((element) => {
+    const key = element.getAttribute("data-key");
+    if (translations[key]) {
+      element.textContent = translations[key];
+    }
+  });
 }
+
+updateText();
+
+// let currentLang = "en"; // Default language
+
+// function toggleLanguage() {
+//   currentLang = currentLang === "en" ? "dk" : "en";
+//   document.getElementById("language-btn").innerText = currentLang === "en" ? "Dansk" : "English";
+
+//   document.querySelector(".menu li:nth-child(1) a").innerText = translations[currentLang].home;
+//   document.querySelector(".menu li:nth-child(2) a").innerText = translations[currentLang].projects;
+//   document.querySelector(".menu li:nth-child(3) a").innerText = translations[currentLang].about;
+//   document.querySelector(".menu li:nth-child(4) a").innerText = translations[currentLang].contact;
+
+//   document.querySelector(".hero-info h2").innerText = translations[currentLang].heroSubtitle;
+//   document.querySelector(".about-container:nth-child(1) h3").innerText = translations[currentLang].whoAmI;
+//   document.querySelector(".about-container:nth-child(2) h3").innerText = translations[currentLang].whatLookingFor;
+//   document.querySelector(".about-container:nth-child(3) h3").innerText = translations[currentLang].howAddValue;
+//   document.querySelector(".about-container .about-text").innerText = translations[currentLang].aboutText;
+//   document.querySelector(".about-container .looking-for-text").innerText = translations[currentLang].lookingForText;
+//   document.querySelector(".about-container .value-text").innerText = translations[currentLang].valueText;
+// }

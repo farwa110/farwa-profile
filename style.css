@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #000000;
 }
@@ -13,14 +17,16 @@ Variables
   --ff-secondary: "Roboto flex", sans-serif;
   --spacing: 0.25rem;
   --text-color: #e0e0e0;
-  --h1-font-size: 4rem; /* Adjust size for h1 */
-  --h2-font-size: 1.5rem; /* Adjust size for h2 */
-  --h3-font-size: 2.5rem; /* Adjust size for h3 */
-  --h4-font-size: 0.875rem; /* Adjust size for h4 */
+  --h1-font-size: 4rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 2.5rem;
+  --h4-font-size: 1.2rem;
+  --paragraph-font-size: 18px;
+  --paragraph-line-height: 1.6;
 }
 p {
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: var(--paragraph-font-size);
+  line-height: var(--paragraph-line-height);
 }
 /*
 =============== 
@@ -40,6 +46,9 @@ header {
   background-color: transparent;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   /* opacity: 0.9; */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo img {
@@ -102,6 +111,9 @@ nav {
   display: none;
 }
 @media screen and (max-width: 800px) {
+  .header {
+    position: static;
+  }
   .menu {
     display: none;
   }
@@ -158,6 +170,40 @@ nav {
 Navbar Styles
 ===============
 */
+
+/*
+=============== 
+Hero Section
+===============
+*/
+.hero-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.hero-info h2 {
+  white-space: nowrap;
+  text-align: center;
+}
+.underline {
+  border: 2px solid #14ffec;
+  padding: 10px;
+  height: 69%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 2px;
+}
+.underline h1 {
+  margin-bottom: 0px;
+}
+.underline h2 {
+  color: rgba(20, 255, 236, 1);
+}
+
 h1,
 h2,
 h3 {
@@ -187,38 +233,6 @@ h4 {
 /* Specific underline style for h2 */
 .underline h2 {
   white-space: nowrap;
-}
-
-/*
-=============== 
-Hero Section
-===============
-*/
-.hero-info {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-.hero-info h2 {
-  white-space: nowrap;
-  text-align: center;
-}
-.underline {
-  border: 2px solid #14ffec;
-  padding: 10px;
-  height: 69%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.underline h1 {
-  margin-bottom: 0px;
-}
-.underline h2 {
-  color: rgba(20, 255, 236, 1);
 }
 .hero {
   height: 700px;
@@ -272,6 +286,7 @@ Hero Section
   position: absolute;
   border: solid 1px rgba(20, 255, 236, 1);
   opacity: 0.5;
+  border-radius: 2px;
 }
 .color-frame-2 {
   height: 500px;
@@ -280,6 +295,7 @@ Hero Section
   margin-left: 8%;
   position: absolute;
   border: solid 5px rgba(20, 255, 236, 1);
+  border-radius: 2px;
 }
 /*
 =============== 
@@ -319,8 +335,6 @@ About Section
 }
 
 .about-container p {
-  font-size: 1rem;
-  line-height: 1.6;
   color: var(--text-color);
 }
 
@@ -357,8 +371,8 @@ About Section
 Project Section
 ===============
 */
-/* Basic carousel container setup */
-/* Basic carousel container setup */
+
+/*  carousel container*/
 .project-section {
   display: flex;
   flex-direction: column;
@@ -395,7 +409,6 @@ Project Section
 }
 .carousel-description {
   margin-top: 10px;
-  font-size: 1.2rem;
   color: var(--text-color);
 }
 .dots {
@@ -429,32 +442,30 @@ cv Section
 ===============
 */
 .cv-resume-container {
-  display: flex; /* Aligns items in a row */
-  gap: 150px; /* Adds space between the two columns */
-  flex-wrap: wrap; /* Makes the layout responsive for smaller screens */
-  align-items: center; /* Vertically center the items */
-  justify-content: center; /* Horizontally center the items */
+  display: flex;
+  gap: 150px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin-top: 5rem;
 }
 
 .cv,
 .resume {
-  /* Removed flex: 1 to allow more control over width */
   padding: 50px;
-  min-width: 150px; /* Adjust the min-width for the columns */
-  display: flex; /* Aligns the image inside each div */
-  justify-content: center; /* Centers the image inside each div */
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
   background: rgba(20, 255, 236, 0.1);
   border: 2px solid rgba(20, 255, 236, 0.5);
   border-radius: 20px;
 }
 
-/* Target the specific images */
 #cv-image,
 #resume-image {
   width: 100%;
-  max-width: 150px; /* Maximum image size */
-  height: auto; /* Maintains aspect ratio */
+  max-width: 150px;
+  height: auto;
 }
 
 /*
@@ -492,7 +503,7 @@ cv Section
 
 @media (max-width: 1000px) {
   .carousel-item {
-    min-width: 48%; /* Show two items */
+    min-width: 48%;
   }
 }
 @media screen and (max-width: 800px) {
@@ -501,10 +512,10 @@ cv Section
     text-align: center;
   }
   .carousel-item {
-    min-width: 60%; /* Show one item */
+    min-width: 60%;
   }
   .cv-resume-container {
-    flex-direction: column; /* Stacks the items vertically on smaller screens */
+    flex-direction: column;
   }
 }
 
@@ -513,7 +524,7 @@ cv Section
     text-align: center;
   }
   .carousel-item {
-    min-width: 60%; /* Show one item */
+    min-width: 60%;
   }
 }
 @media screen and (max-width: 460px) {
@@ -531,7 +542,7 @@ cv Section
     margin-left: 0%;
   }
   .carousel-item {
-    min-width: 90%; /* Show one item */
+    min-width: 90%;
   }
   h1 {
     font-size: 2rem;
@@ -559,7 +570,7 @@ cv Section
     margin: 0px 10px 0 10px;
   }
   .carousel-item {
-    min-width: 98%; /* Show one item */
+    min-width: 98%;
   }
 }
 
@@ -584,12 +595,12 @@ footer Section
 */
 
 footer {
-  background-image: url("assets/wave.svg"); /* Replace with your actual SVG file name */
+  background-image: url("assets/wave.svg");
   background-repeat: no-repeat;
-  background-size: cover; /* Adjust to 'contain' if needed */
+  background-size: cover;
   background-position: center;
-  padding: 10px 0; /* Adjust padding to fit content properly */
-  color: black; /* Ensure text is readable on the SVG */
+  padding: 10px 0;
+  color: black;
   text-align: center;
   height: 250px;
   display: flex;
@@ -615,11 +626,66 @@ footer {
 }
 
 .social-icons a {
-  margin: 10px 10px;
-  padding: 10px 10px 10px 10px;
+  margin: 20px 20px;
+  padding: 15px 15px;
 }
 
 .social-icons img {
-  width: 24px; /* Adjust icon size */
+  width: 35px;
   height: auto;
+}
+/*
+=============== 
+ cv, resume page
+===============
+*/
+h1 {
+  letter-spacing: var(--spacing);
+
+  line-height: 1.25;
+  font-family: var(--ff-primary);
+  color: rgba(20, 255, 236, 1);
+  text-align: center;
+  margin: 50px 50px;
+}
+
+iframe {
+  width: 90%;
+  max-width: 900px;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  height: 600px;
+}
+
+.cv-button {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  background: rgba(20, 255, 236, 0.8);
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 30px 30px;
+}
+
+.cv-button:active {
+  transform: translateY(1px);
+}
+#language-btn {
+  padding: 5px 10px;
+  border: none;
+  background-color: rgba(20, 255, 236, 1);
+  color: black;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+#language-btn:hover,
+.cv-button:hover {
+  background-color: rgba(20, 255, 236, 0.8);
 }

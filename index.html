@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Potfolio</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="particle.css">
     <link rel="icon" type="image/x-icon" href="assets/portfolio.ico">
@@ -31,14 +30,14 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">My Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact me</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">My-Projects</a></li>
+                <li><a href="#contact">Contact me</a></li>
             </ul>
-            <div class="language-switch">
+            <!-- <div class="language-switch">
                 <button id="language-btn" onclick="toggleLanguage()">Dansk</button>
-            </div>
+            </div> -->
             <div class="burger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -48,7 +47,7 @@
         </nav>
     </header>
     <!-- end of navbar -->
-    <!-- hero -->
+    <!-- home section -->
     <section id="home" class="section">
         <div class="hero">
             <div class="hero-box">
@@ -56,7 +55,7 @@
                     <div class="underline">
                         <h1> <span style="color: rgba(20, 255, 236, 1);">FARWA</span> RIZVI </h1>
                         <!-- <h1><span><span id="first-letter" style="color: rgba(20, 255, 236, 1);">Farwa</span></span> Rizvi</h1> -->
-                        <h2>“Multimedia Designer” <br>Designing with Purpose, Developing with Precision</h2>
+                        <h2>“Multimedia Designer” <br>Purposeful Design, Precise Development</h2>
                         <!-- <h3>Multimedia Designer</h3> -->
                     </div>
                 </div>
@@ -68,7 +67,7 @@
             </div>
         </div>
     </section>
-    <!-- end of hero -->
+    <!-- end of home section -->
     <!-- Divider -->
     <div class="divider"></div>
 
@@ -78,7 +77,8 @@
         <div class="about-parent">
             <div class="about-container">
                 <h3>Who Am I?</h3>
-                <p>I am a Multimedia Design student at Københavns ErhvervsAkademi with a strong passion for frontend
+                <p class="translatable" data-key="aboutText">I am a Multimedia Design student at Københavns
+                    ErhvervsAkademi with a strong passion for frontend
                     development and UI/UX
                     design. Creativity, problem-solving, and user-centered design are at the core of my approach, and I
                     am always eager to
@@ -86,7 +86,8 @@
             </div>
             <div class="about-container">
                 <h3>What I'm Looking For?</h3>
-                <p>I am looking for an internship where I can refine my frontend development skills while also applying
+                <p class="translatable" data-key="lookingForText">I am looking for an internship where I can refine my
+                    frontend development skills while also applying
                     my UX/UI knowledge
                     in real-world projects. My goal is to contribute to a dynamic team, gain hands-on experience, and
                     grow as a professional
@@ -94,7 +95,9 @@
             </div>
             <div class="about-container">
                 <h3>How I Can Add Value?</h3>
-                <p>As an intern, I bring a fresh perspective, a positive approach, and creative ideas that can add value
+                <p class="translatable" data-key="valueText">
+                    As an intern, I bring a fresh perspective, a positive approach, and creative ideas that
+                    can add value
                     to your company.
                     My background in frontend development ensures that I can contribute effectively to building
                     engaging, functional, and
@@ -210,7 +213,7 @@
     <!-- Divider -->
     <div class="divider"></div>
     <!-- UX/UI Project Section -->
-    <section id="uxui-projects" class="project-section">
+    <section class="project-section">
         <h2>My UX/UI Projects</h2>
         <div class="carousel-wrapper">
             <div class="carousel" id="uxui-carousel">
@@ -223,7 +226,7 @@
                     <h4 class="carousel-description">Redesign Distortions Website</h4>
                     <p class="carousel-description">Conducted user research and testing to enhance website
                         usability.Made wireframes, prototypes to find the best digital solution for our target audience
-                        remaining the authenticity of the brand and follows the design guide given by them.This is a
+                        remaining the authenticity of the brand and follows the design guide given by them.This was a
                         group project.
                     </p>
                 </div>
@@ -233,7 +236,7 @@
                         target="_blank" class="prototype-btn">
                         <img src="assets/kidsbrand.png" alt="UX Project 3" class="carousel-image">
                     </a>
-                    <h4 class="carousel-description">Designed One pager for Kids aid clowns</h4>
+                    <h4 class="carousel-description"> One pager for Kids-aid clowns</h4>
                     <p class="carousel-description">Created a reusable design system and style tile for Coming Up, a
                         volunteer organization under Holbæk Kommune, supporting
                         youth life in Holbæk. The design reflects the organization's concept and essence, backed by
@@ -246,12 +249,12 @@
                         target="_blank" class="prototype-btn">
                         <img src="assets/comingup-ux.png" alt="UX Project 3" class="carousel-image">
                     </a>
-                    <h4 class="carousel-description">Design System & UI Design of Comingup Holbæk</h4>
+                    <h4 class="carousel-description"> UI Design& Prototype for Comingup</h4>
                     <p class="carousel-description">Created a reusable design system and style tile for Coming Up, a
-                        volunteer organization under Holbæk Kommune, supporting
-                        youth life in Holbæk. The design reflects the organization's concept and essence, backed by
-                        thorough user research and
-                        testing for consistency across platforms. This was also a group project.
+                        volunteer organization under Holbæk Kommune that
+                        supports youth life in Holbæk. The design reflects the organization's concept and essence,
+                        backed by thorough user
+                        research and testing to ensure consistency across platforms. This was a group project.
                     </p>
                 </div>
                 <div class="carousel-item">
@@ -259,12 +262,14 @@
                         target="_blank" class="prototype-btn">
                         <img src="assets/techkea.png" alt="UX Project 2" class="carousel-image">
                     </a>
-                    <h4 class="carousel-description">Redesign Kea Tech & Story webpage</h4>
-                    <p class="carousel-description">Redesigned the interface for Kea tech & story Lab to improve visual
-                        communication and functionality by using card sorting mehod and crazy 8s and find the best
-                        possible solution remaining within the brand visual identity and design guide. Test before and
-                        after redesigning to show the results in improving accessibility, functionality and
-                        usability.This is a group project.
+                    <h4 class="carousel-description"> A Fresh, Sustainable Redesign</h4>
+                    <p class="carousel-description">Redesigned the interface for KEA Tech & Story Lab to enhance visual
+                        communication and functionality. Utilized card
+                        sorting and the Crazy 8s method to find the best solution while staying within the brand's
+                        visual identity and design
+                        guidelines. Conducted pre- and post-redesign testing to demonstrate improvements in
+                        accessibility, functionality, and
+                        usability. This was a group project.
                     </p>
                 </div>
             </div>
@@ -273,7 +278,7 @@
     </section>
     <!-- Divider -->
     <div class="divider"></div>
-    <section id="cv-container" class="cv-section">
+    <section id="contact" class="cv-section">
         <h2>CV & Resume</h2>
         <div class="cv-resume-container">
 
@@ -321,22 +326,6 @@
         </div>
     </footer>
     <!-- end of footer -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script src="menu.js"></script>
     <script src="particle.js"></script>
     <script src="script.js"></script>

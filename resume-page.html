@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="particle.css">
+</head>
+
+<body>
+    <div id="particles"></div>
+    <header>
+
+        <!-- navbar -->
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logoreal.png" alt="logomain"></a>
+
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Hjem</a></li>
+                <li><a href="projects.html">Min Projekter</a></li>
+                <li><a href="about.html">Om mig</a></li>
+                <li><a href="contact.html">Kontakt mig</a></li>
+            </ul>
+            <div class="language-switch">
+                <button id="language-btn" onclick="toggleLanguage()">Dansk</button>
+            </div>
+            <div class="burger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+
+        </nav>
+
+        <!-- end of navbar -->
+
+
+
+
+
+    </header>
+
+    <main>
+        <h1>My Resume</h1>
+        <!-- Display the Resume PDF -->
+        <iframe src="assets/mycv.pdf"></iframe>
+
+        <!-- Download link -->
+        <p>
+            <a class="cv-button" href="assets/my-resume.pdf" download>Download Resume (PDF)</a>
+        </p>
+    </main>
+
+    <footer>
+
+    </footer>
+    <script src="particle.js"></script>
+    <script src="menu.js"></script>
+</body>
+
+</html>

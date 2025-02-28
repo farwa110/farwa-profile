@@ -18,6 +18,10 @@ Variables
   --h3-font-size: 2.5rem; /* Adjust size for h3 */
   --h4-font-size: 0.875rem; /* Adjust size for h4 */
 }
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
 /*
 =============== 
 Global Styles
@@ -156,8 +160,7 @@ Navbar Styles
 */
 h1,
 h2,
-h3,
-h4 {
+h3 {
   letter-spacing: var(--spacing);
   text-transform: capitalize;
   line-height: 1.25;
@@ -323,7 +326,7 @@ About Section
 
 h2 {
   font-family: var(--ff-primary);
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   text-align: center;
   letter-spacing: 2px;
@@ -368,6 +371,7 @@ Project Section
   margin: 20px 20px 20px 20px;
   overflow: hidden;
   position: relative;
+  background: rgba(20, 255, 236, 0.1);
 }
 .carousel {
   display: flex;
@@ -392,7 +396,7 @@ Project Section
 .carousel-description {
   margin-top: 10px;
   font-size: 1.2rem;
-  color: #333;
+  color: var(--text-color);
 }
 .dots {
   text-align: center;
@@ -410,10 +414,52 @@ Project Section
 .dot.active {
   background: #333;
 }
-
+.carousel-item h4 {
+  color: rgba(20, 255, 236, 1);
+}
 /*
 =============== 
 Project Section
+===============
+*/
+
+/*
+=============== 
+cv Section
+===============
+*/
+.cv-resume-container {
+  display: flex; /* Aligns items in a row */
+  gap: 150px; /* Adds space between the two columns */
+  flex-wrap: wrap; /* Makes the layout responsive for smaller screens */
+  align-items: center; /* Vertically center the items */
+  justify-content: center; /* Horizontally center the items */
+  margin-top: 5rem;
+}
+
+.cv,
+.resume {
+  /* Removed flex: 1 to allow more control over width */
+  padding: 50px;
+  min-width: 150px; /* Adjust the min-width for the columns */
+  display: flex; /* Aligns the image inside each div */
+  justify-content: center; /* Centers the image inside each div */
+  background: rgba(20, 255, 236, 0.1);
+  border: 2px solid rgba(20, 255, 236, 0.5);
+  border-radius: 20px;
+}
+
+/* Target the specific images */
+#cv-image,
+#resume-image {
+  width: 100%;
+  max-width: 150px; /* Maximum image size */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/*
+=============== 
+cv Section
 ===============
 */
 
@@ -443,15 +489,31 @@ Project Section
     gap: 20px;
   }
 }
+
+@media (max-width: 1000px) {
+  .carousel-item {
+    min-width: 48%; /* Show two items */
+  }
+}
 @media screen and (max-width: 800px) {
   .hero-info h2 {
     white-space: unset;
     text-align: center;
   }
+  .carousel-item {
+    min-width: 60%; /* Show one item */
+  }
+  .cv-resume-container {
+    flex-direction: column; /* Stacks the items vertically on smaller screens */
+  }
 }
+
 @media screen and (max-width: 560px) {
   .underline h1 {
     text-align: center;
+  }
+  .carousel-item {
+    min-width: 60%; /* Show one item */
   }
 }
 @media screen and (max-width: 460px) {
@@ -468,6 +530,18 @@ Project Section
     margin-top: -4%;
     margin-left: 0%;
   }
+  .carousel-item {
+    min-width: 90%; /* Show one item */
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  .divider {
+    margin-top: 2rem;
+  }
 }
 @media screen and (max-width: 390px) {
   .hero {
@@ -483,6 +557,9 @@ Project Section
   }
   .hero-box {
     margin: 0px 10px 0 10px;
+  }
+  .carousel-item {
+    min-width: 98%; /* Show one item */
   }
 }
 
@@ -512,12 +589,13 @@ footer {
   background-size: cover; /* Adjust to 'contain' if needed */
   background-position: center;
   padding: 10px 0; /* Adjust padding to fit content properly */
-  color: rgb(194, 70, 70); /* Ensure text is readable on the SVG */
+  color: black; /* Ensure text is readable on the SVG */
   text-align: center;
-  height: 150px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: end;
+  margin-top: 10rem;
 }
 
 .footer-container {
@@ -533,10 +611,12 @@ footer {
 .footer-text p {
   margin: 0;
   font-size: 14px;
+  /* font-weight: 800; */
 }
 
 .social-icons a {
-  margin: 0 10px;
+  margin: 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
 .social-icons img {

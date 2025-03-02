@@ -18,8 +18,8 @@ Variables
   --spacing: 0.25rem;
   --text-color: #e0e0e0;
   --h1-font-size: 4rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 2.5rem;
+  --h2-font-size: 2.2rem;
+  --h3-font-size: 2rem;
   --h4-font-size: 1.2rem;
   --paragraph-font-size: 18px;
   --paragraph-line-height: 1.6;
@@ -331,7 +331,7 @@ About Section
 
 .about-container h3 {
   color: rgba(20, 255, 236, 1);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
 }
 
@@ -549,10 +549,11 @@ cv Section
     font-size: 2rem;
   }
   h2 {
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
+
   .divider {
-    margin-top: 2rem;
+    margin-top: 10rem;
   }
 }
 @media screen and (max-width: 390px) {

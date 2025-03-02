@@ -111,8 +111,9 @@ nav {
   display: none;
 }
 @media screen and (max-width: 800px) {
-  .header {
-    position: static;
+  header {
+    padding: 10px 20px;
+    height: auto;
   }
   .menu {
     display: none;

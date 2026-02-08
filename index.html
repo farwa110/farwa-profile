@@ -30,14 +30,33 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">My-Projects</a></li>
-                <li><a href="#contact">Contact me</a></li>
+                <li><a href="#home" data-key="navHome">Home</a></li>
+                <li><a href="#about" data-key="navAbout">About</a></li>
+                <li><a href="#project" data-key="navProjects">My-Projects</a></li>
+                <li><a href="#contact" data-key="navContact">Contact me</a></li>
             </ul>
-            <!-- <div class="language-switch">
-                <button id="language-btn" onclick="toggleLanguage()">Dansk</button>
-            </div> -->
+            <!-- <--- langue dropdown menu -->
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-current" id="langCurrent" type="button" aria-haspopup="listbox"
+                    aria-expanded="false">
+                    <img id="langCurrentFlag" src="assets/gb.svg" alt="English">
+                    <span id="langCurrentLabel">EN</span>
+                    <span class="chev">▾</span>
+                </button>
+
+                <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+                    <li role="option" data-lang="en">
+                        <img src="assets/gb.svg" alt="English">
+                        <span>English</span>
+                    </li>
+                    <li role="option" data-lang="da">
+                        <img src="assets/dk.svg" alt="Dansk">
+                        <span>Dansk</span>
+                    </li>
+                </ul>
+            </div>
+
+
             <div class="burger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -53,10 +72,11 @@
             <div class="hero-box">
                 <div class="hero-info">
                     <div class="underline">
-                        <h1> <span style="color: rgba(20, 255, 236, 1);">FARWA</span> RIZVI </h1>
-                        <!-- <h1><span><span id="first-letter" style="color: rgba(20, 255, 236, 1);">Farwa</span></span> Rizvi</h1> -->
+                        <!-- <h1> <span style="color: rgba(20, 255, 236, 1);">FARWA</span> RIZVI </h1> -->
+                        <h1> <span>FARWA</span> RIZVI </h1>
                         <!-- <h2>“Multimedia Designer” <br>Purposeful Design, Precise Development</h2> -->
-                        <h2>UX/UI Designer & Frontend Developer<br>Designing Interfaces That Work</h2>
+                        <h2 data-key="heroSubtitle">UX/UI Designer & Frontend Developer<br>Designing Interfaces That
+                            Work</h2>
                         <!-- <h3>Multimedia Designer</h3> -->
                     </div>
                 </div>
@@ -74,10 +94,10 @@
 
     <!-- About Section -->
     <section id="about" class="about-section">
-        <h2>About Me</h2>
+        <h2 data-key="aboutTitle">About Me</h2>
         <div class="about-parent">
             <div class="about-container">
-                <h3>Who Am I?</h3>
+                <h3 data-key="whoTitle">Who Am I?</h3>
                 <p class="translatable" data-key="aboutMeText">
                     I’m a Multimedia Design graduate from Københavns ErhvervsAkademi(EK) with a focus on frontend
                     development and UX/UI
@@ -87,10 +107,10 @@
                     functional and visually
                     refined.
 
-                    .</p>
+                </p>
             </div>
             <div class="about-container">
-                <h3>What I'm Looking For?</h3>
+                <h3 data-key="lookingTitle">What I'm Looking For?</h3>
                 <p class="translatable" data-key="lookingForText">
                     I am currently seeking a full-time position where I can contribute as a frontend developer or UX/UI
                     designer,
@@ -101,7 +121,7 @@
 
             </div>
             <div class="about-container">
-                <h3>How I Can Add Value?</h3>
+                <h3 data-key="valueTitle">How I Can Add Value?</h3>
                 <p class="translatable" data-key="valueText">
                     As a newly graduated Multimedia Designer, I bring a fresh perspective, a positive approach, and
                     creative ideas that
@@ -120,7 +140,7 @@
     <div class="divider"></div>
     <!-- Project Section -->
     <section id="project" class="project-section">
-        <h2>My Projects</h2>
+        <h2 data-key="navProjects">My Projects</h2>
         <div class="carousel-wrapper">
             <div class="carousel" id="projects-carousel">
                 <div class="carousel-item">
@@ -128,7 +148,8 @@
                         <img src="assets/animation.png" alt="Image 1" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Game Hit or Miss</h4>
-                    <p class="carousel-description">Hit or Miss is a fun game where players need to click on 5 blue
+                    <p class="carousel-description" data-key="hitOrMiss">Hit or Miss is a fun game where
+                        players need to click on 5 blue
                         rugby balls to win. The game is built using HTML, CSS,
                         and JavaScript, offering a simple yet engaging experience.</p>
                 </div>
@@ -137,7 +158,8 @@
                         <img src="assets/master.png" alt="Image 2" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Sushi-Master</h4>
-                    <p class="carousel-description">Sushi Master is a website for sushi lovers, offering DIY sushi
+                    <p class="carousel-description" data-key="sushiMaster">Sushi Master is a website for sushi lovers,
+                        offering DIY sushi
                         recipes and showcasing the most authentic and popular
                         sushi places in Copenhagen. Built with HTML, CSS, and JavaScript, it provides everything from
                         sushi-making tips to local
@@ -148,7 +170,8 @@
                         <img src="assets/cph-capacity.png" alt="Image 3" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Copenhagen-Capacity</h4>
-                    <p class="carousel-description">Redesigned the Copenhagen Capacity website based on UX/UI
+                    <p class="carousel-description" data-key="copenhagenCapacity">Redesigned the Copenhagen Capacity
+                        website based on UX/UI
                         principles to attract a young target audience with improved
                         clarity and user engagement. The site is more sustainable and lightweight, utilizing Lottie
                         files, embedded codes, and WebP images to optimize performance.
@@ -160,7 +183,8 @@
                         <img src="assets/todo.png" alt="Image 2" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Todo-application</h4>
-                    <p class="carousel-description">This is a To-Do app using basic JavaScript, with the purpose of
+                    <p class="carousel-description" data-key="todoApp">This is a To-Do app using basic
+                        JavaScript, with the purpose of
                         allowing users to easily add, track, and manage their
                         tasks. The app provides a simple and intuitive interface, where users can add tasks, mark them
                         as completed, and
@@ -172,7 +196,8 @@
                         <img src="assets/beregner.png" alt="Image 4" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">VAT-calculator</h4>
-                    <p class="carousel-description">This is a basic Moms Calculator created by using JavaScript,
+                    <p class="carousel-description" data-key="vatCalculator">This is a basic Moms Calculator created by
+                        using JavaScript,
                         designed for
                         Danish consumers to easily calculate their VAT (moms).
                         The tool allows users to input the price of an item and quickly see the VAT added or removed,
@@ -185,7 +210,8 @@
                         <img src="assets/rock.png" alt="Image 4" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Rock Paper Scissor Game</h4>
-                    <p class="carousel-description">This fun game Rock Paper Scissors game is built by using JavaScript
+                    <p class="carousel-description" data-key="rockPaperScissors">This fun game Rock Paper Scissors game
+                        is built by using JavaScript
                         to learn and
                         practice the logic of the language. The game lets
                         users play against the computer, where the choices are randomly generated, and the winner is
@@ -198,7 +224,8 @@
                         <img src="assets/kidsbrand.png" alt="Image 4" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Kids aid clown page</h4>
-                    <p class="carousel-description">This is a one-page website for Kids Aid Clowns, designed to
+                    <p class="carousel-description" data-key="kidsAidClownsDev">This is a one-page website for Kids Aid
+                        Clowns, designed to
                         showcase the organization's concept and tagline. The page
                         features a parallax scroll effect, engaging illustrations, and small animations, all built with
                         UX/UI principles to
@@ -210,7 +237,8 @@
                         <img src="assets/comingup-ux.png" alt="Image 5" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Coming up-Holbæk</h4>
-                    <p class="carousel-description">dynamically Data fetching from Supabase and used Astro to kode this
+                    <p class="carousel-description" data-key="comingUpHolbaekDev">dynamically Data fetching from
+                        Supabase and used Astro to kode this
                         project. The single view and lists of the artist is fetched by using api and the different pages
                         by using map is dynamically generated of different artists.</p>
                 </div>
@@ -222,7 +250,7 @@
     <div class="divider"></div>
     <!-- UX/UI Project Section -->
     <section class="project-section">
-        <h2>My UX/UI Projects</h2>
+        <h2 data-key="uxProjects">My UX/UI Projects</h2>
         <div class="carousel-wrapper">
             <div class="carousel" id="uxui-carousel">
                 <div class="carousel-item">
@@ -232,7 +260,8 @@
                         <img src="assets/distortion.png" alt="UX Project 1" class="carousel-image">
                     </a>
                     <h4 class="carousel-description">Redesign Distortions Website</h4>
-                    <p class="carousel-description">Conducted user research and testing to enhance website
+                    <p class="carousel-description" data-key="distortionsRedesign">Conducted user research and testing
+                        to enhance website
                         usability.Made wireframes, prototypes to find the best digital solution for our target audience
                         remaining the authenticity of the brand and follows the design guide given by them.This was a
                         group project.
@@ -245,7 +274,8 @@
                         <img src="assets/kidsbrand.png" alt="UX Project 3" class="carousel-image">
                     </a>
                     <h4 class="carousel-description"> One pager for Kids-aid clowns</h4>
-                    <p class="carousel-description">Created a reusable design system and style tile for Coming Up, a
+                    <p class="carousel-description" data-key="kidsAidClownsUx">Created a reusable design system and
+                        style tile for Coming Up, a
                         volunteer organization under Holbæk Kommune, supporting
                         youth life in Holbæk. The design reflects the organization's concept and essence, backed by
                         thorough user research and
@@ -258,7 +288,8 @@
                         <img src="assets/comingup-ux.png" alt="UX Project 3" class="carousel-image">
                     </a>
                     <h4 class="carousel-description"> UI Design& Prototype for Comingup</h4>
-                    <p class="carousel-description">Created a reusable design system and style tile for Coming Up, a
+                    <p class="carousel-description" data-key="comingUpPrototypeUx">Created a reusable design system and
+                        style tile for Coming Up, a
                         volunteer organization under Holbæk Kommune that
                         supports youth life in Holbæk. The design reflects the organization's concept and essence,
                         backed by thorough user
@@ -271,7 +302,8 @@
                         <img src="assets/techkea.png" alt="UX Project 2" class="carousel-image">
                     </a>
                     <h4 class="carousel-description"> A Fresh, Sustainable Redesign</h4>
-                    <p class="carousel-description">Redesigned the interface for EK Tech & Story Lab to enhance visual
+                    <p class="carousel-description" data-key="ekTechRedesignUx">Redesigned the interface for EK Tech &
+                        Story Lab to enhance visual
                         communication and functionality. Utilized card
                         sorting and the Crazy 8s method to find the best solution while staying within the brand's
                         visual identity and design
@@ -309,10 +341,10 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-text">
+            <div class="footer-text" data-key="footerHeading">
                 <p>Developed by Farwa</p>
             </div>
-            <div class="footer-text">
+            <div class="footer-text" data-key="footerText">
                 <p>
                     © 2024 farwa. All Rights Reserved </p>
 
@@ -337,6 +369,7 @@
     <script src="menu.js"></script>
     <script src="particle.js"></script>
     <script src="script.js"></script>
+    <script src="lang.js"></script>
 
 
 </body>

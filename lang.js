@@ -50,6 +50,8 @@ const translations = {
     ekTechRedesignUx: "Redesigned the interface for EK Tech & Story Lab to strengthen visual communication and functionality. Used card sorting and the Crazy 8s method to explore solutions while staying within the brand’s visual identity and design guidelines. Conducted pre- and post-redesign testing to show improvements in accessibility, functionality, and usability. This was a group project.",
     footerText: "© 2024 Farwa. All rights reserved.",
     footerHeading: "Designed & Developed by Farwa",
+    webshop: "A modern webshop built with Next.js, Tailwind CSS, and JavaScript. The application fetches product data from a public API and uses Zustand for global state management, including cart functionality. The solution focuses on performance, scalability, and a clean, user-friendly interface.",
+    statensKunstmuseum: "A curator management system developed with Next.js, focusing on performance and efficient API communication. The platform uses Clerk for authentication, where logged-in users act as curators who can create events and add artworks. Visitors without login access can only view the content.",
   },
 
   da: {
@@ -98,6 +100,8 @@ const translations = {
     ekTechRedesignUx: "Jeg redesignede interfacet til EK Tech & Story Lab for at styrke visuel kommunikation og funktionalitet. Jeg brugte card sorting og Crazy 8s-metoden til at udforske løsninger, samtidig med at vi holdt os inden for brandets visuelle identitet og designretningslinjer. Jeg gennemførte tests før og efter redesignet for at dokumentere forbedringer i tilgængelighed, funktionalitet og brugervenlighed. Dette var et gruppeprojekt.",
     footerText: "© 2024 Farwa. Alle rettigheder forbeholdes.",
     footerHeading: "Designet og udviklet af Farwa",
+    webshop: "En moderne webshop udviklet med Next.js, Tailwind CSS og JavaScript. Applikationen henter produktdata fra et offentligt API og anvender Zustand til global state management, herunder håndtering af indkøbskurven. Løsningen har fokus på performance, skalerbarhed og en ren, brugervenlig grænseflade.",
+    statensKunstmuseum: "Et kuratorsystem udviklet med Next.js med fokus på performance og effektiv API-kommunikation. Platformen anvender Clerk til autentifikation, hvor brugere, der er logget ind, fungerer som kuratorer og kan oprette events samt tilføje kunstværker. Besøgende uden login har kun adgang til at se indholdet. Løsningen understøtter både dansk og engelsk og er opbygget med en klar adskillelse mellem frontend og backend for skalerbar og vedligeholdelsesvenlig API-integration.",
   },
 };
 

@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function startAutoSlide() {
-      interval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+      interval = setInterval(nextSlide, 10000); // Change slide every 8 seconds
     }
 
     function resetInterval() {

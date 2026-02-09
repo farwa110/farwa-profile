@@ -32,7 +32,7 @@ const translations = {
 
     todoApp: "This is a To-Do app using basic JavaScript, with the purpose of allowing users to easily add, track, and manage their tasks. The app provides a simple and intuitive interface, where users can add tasks, mark them as completed, and prioritize them, helping them stay organized and productive.",
 
-    vatCalculator: "This is a basic Moms Calculator created by using JavaScript, designed for Danish consumers to easily calculate their VAT (moms). The tool allows users to input the price of an item and quickly see the VAT added or removed, making the calculation process simple and accessible for everyone.",
+    askExpertsDev: "Ask Experts is a website built using Astro, a climate-friendly and highly optimized framework for modern web development. Astro enables the creation of fast, attractive, and static websites by shipping minimal JavaScript, resulting in excellent performance, accessibility, and energy efficiency. The project focuses on delivering a clean and user-friendly interface for users to ask questions and receive expert answers, while also adhering to sustainable web development practices.",
 
     rockPaperScissors: "This fun Rock Paper Scissors game is built using JavaScript to learn and practice the logic of the language. The game lets users play against the computer, where the choices are randomly generated, and the winner is determined based on the classic rules.",
 
@@ -82,7 +82,7 @@ const translations = {
 
     todoApp: "Denne To-Do-applikation er udviklet med grundlæggende JavaScript og har til formål at gøre det nemt for brugeren at oprette, følge og administrere opgaver. Applikationen har et simpelt og intuitivt interface, hvor brugere kan tilføje opgaver, markere dem som fuldførte og prioritere dem for bedre struktur og produktivitet.",
 
-    vatCalculator: "Dette er en simpel momsberegner udviklet i JavaScript, målrettet danske forbrugere. Værktøjet gør det muligt hurtigt at beregne moms ved at indtaste en pris og se beløbet med eller uden moms, hvilket gør beregningen nem og tilgængelig for alle.",
+    askExpertsDev: "Ask Experts er en hjemmeside udviklet med Astro, et klimavenligt og højt optimeret framework til moderne webudvikling. Astro gør det muligt at bygge hurtige, attraktive og statiske websites med minimal JavaScript, hvilket giver høj performance, god tilgængelighed og energieffektivitet.",
 
     rockPaperScissors: "Dette Rock Paper Scissors-spil er udviklet i JavaScript med fokus på at lære og træne sprogets logik. Spillet lader brugeren spille mod computeren, hvor valgene genereres tilfældigt, og vinderen afgøres ud fra de klassiske spilleregler.",
 

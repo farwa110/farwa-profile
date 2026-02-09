@@ -43,12 +43,30 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background-color: transparent;
+  /* background-color: transparent; */
+  background: rgba(0, 0, 0, 0.75);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* opacity: 0.9; */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  opacity: 0.9;
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* NEW: readable sticky header */
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border-bottom: 1px solid rgba(20, 255, 236, 0.18); */
+
+  /* Optional: slightly tighter spacing */
+  padding: 14px 20px;
 }
 
 .logo img {
@@ -179,7 +197,7 @@ Hero Section
 */
 .hero-info {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -189,7 +207,7 @@ Hero Section
   text-align: center;
 }
 .underline {
-  border: 2px solid #14ffec;
+  /* border: 2px solid #14ffec; */
   padding: 10px;
   height: 69%;
   display: flex;
@@ -295,8 +313,12 @@ h4 {
   margin-top: -4%;
   margin-left: 8%;
   position: absolute;
-  border: solid 5px rgba(20, 255, 236, 1);
+  border: solid 2px rgba(20, 255, 236, 1);
   border-radius: 2px;
+}
+.about-section {
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 /*
 =============== 
@@ -307,6 +329,14 @@ About Section
 .divider {
   margin-top: 15rem;
 }
+
+section[id] {
+  scroll-margin-top: 90px;
+}
+
+/* .divider {
+  height: clamp(2rem, 6vw, 5rem);
+} */
 
 .about-parent {
   display: grid;
@@ -592,7 +622,7 @@ footer {
   padding: 10px 0;
   color: black;
   text-align: center;
-  height: 250px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: end;
@@ -751,4 +781,29 @@ iframe {
   height: 18px;
   border-radius: 999px;
   display: block;
+}
+
+/*responsive adjustments fro h2 on small screens*/
+/* ===== Responsive hero typography (prevents overlap) ===== */
+
+.hero-info h1 {
+  font-size: clamp(28px, 8vw, 64px);
+  line-height: 1.05;
+  margin: 0 0 10px 0;
+  word-break: break-word; /* prevents overflow with big names */
+}
+
+.hero-info h2 {
+  font-size: clamp(14px, 4.4vw, 22px);
+  line-height: 1.25;
+  margin: 0;
+  max-width: 30ch; /* keeps lines readable */
+}
+
+/* If you have strong letter-spacing on headings, reduce it on small screens */
+@media (max-width: 380px) {
+  .hero-info h1,
+  .hero-info h2 {
+    letter-spacing: 0.02em; /* adjust if your design uses huge spacing */
+  }
 }

@@ -9,8 +9,8 @@ const translations = {
     navProjects: "My Projects",
     navContact: "Contact me",
 
-    heroSubtitle: "UX/UI Designer & Frontend Developer<br>Designing Interfaces That Work",
-
+    heroSubtitle: "UX/UI Designer & Frontend Developer",
+    smalldesign: "Designs Interfaces That <span>work</span>",
     aboutTitle: "About Me",
     whoTitle: "Who Am I?",
     aboutMeText: "I’m a Multimedia Design graduate from Københavns ErhvervsAkademi (EK) with a focus on frontend development and UX/UI design. I specialize in building responsive, user-centered interfaces where clean code and thoughtful design work together. I’m driven by problem-solving and enjoy creating digital solutions that are both functional and visually refined.",
@@ -61,8 +61,8 @@ const translations = {
     uxProjects: "Mine UX & UI Projekter",
     navContact: "Kontakt",
 
-    heroSubtitle: "UX/UI-designer & frontendudvikler<br>Designer interfaces, der fungerer",
-
+    heroSubtitle: "UX/UI-designer & frontendudvikler",
+    smalldesign: "Designer interfaces, der <span>fungerer</span>",
     aboutTitle: "Om mig",
     whoTitle: "Hvem er jeg?",
     aboutMeText: "Jeg er uddannet Multimediedesigner fra Københavns ErhvervsAkademi (EK) med fokus på frontendudvikling og UX/UI design. Jeg arbejder med at bygge responsive, brugervenlige interfaces, hvor clean code og gennemtænkt design går hånd i hånd. Jeg motiveres af problemløsning og kan lide at skabe digitale løsninger, der både er funktionelle og visuelt skarpe.",

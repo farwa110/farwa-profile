@@ -4,8 +4,13 @@ html {
 
 body {
   background: #000000;
+  margin: 0;
+  padding: 0;
 }
-
+html,
+body {
+  overflow-x: hidden;
+}
 /*
 =============== 
 Variables
@@ -16,13 +21,19 @@ Variables
   --ff-primary: "Roboto", monospace;
   --ff-secondary: "Roboto flex", sans-serif;
   --spacing: 0.25rem;
-  --text-color: #e0e0e0;
+  /* --text-color: #e0e0e0; */
+  --text-color: rgba(255, 255, 255, 0.88);
   --h1-font-size: 4rem;
   --h2-font-size: 2.2rem;
   --h3-font-size: 2rem;
   --h4-font-size: 1.2rem;
   --paragraph-font-size: 18px;
   --paragraph-line-height: 1.6;
+  --text-strong: rgba(255, 255, 255, 0.95); /*whites with more opacity for stronger emphasis*/
+  --text: rgba(255, 255, 255, 0.88);
+  --text-muted: rgba(255, 255, 255, 0.72);
+
+  --accent: #14ffec; /* your neon */
 }
 p {
   font-size: var(--paragraph-font-size);
@@ -109,10 +120,10 @@ nav {
 }
 
 .menu a:hover {
-  color: white;
+  color: var(--text);
 }
 
-.burger {
+/* .burger {
   width: 30px;
   height: 20px;
   cursor: pointer;
@@ -127,7 +138,7 @@ nav {
 }
 .burger {
   display: none;
-}
+} */
 @media screen and (max-width: 800px) {
   header {
     padding: 10px 20px;
@@ -203,7 +214,7 @@ Hero Section
   width: 100%;
 }
 .hero-info h2 {
-  white-space: nowrap;
+  white-space: normal;
   text-align: center;
 }
 .underline {
@@ -227,10 +238,10 @@ h1,
 h2,
 h3 {
   letter-spacing: var(--spacing);
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   line-height: 1.25;
   font-family: var(--ff-primary);
-  color: white;
+  /* color: white; */
 }
 
 h1 {
@@ -251,7 +262,7 @@ h4 {
 
 /* Specific underline style for h2 */
 .underline h2 {
-  white-space: nowrap;
+  white-space: normal;
 }
 .hero {
   height: 700px;
@@ -280,6 +291,9 @@ h4 {
 
 .hero-photo {
   animation: glow 2s ease-in-out infinite alternate;
+}
+.about-container h3 {
+  color: var(--accent);
 }
 
 @keyframes glow {
@@ -320,6 +334,71 @@ h4 {
   margin-right: 2rem;
   margin-left: 2rem;
 }
+.section-title {
+  font-size: clamp(1.4rem, 6vw, 2.8rem);
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+
+  /* wrapping */
+  white-space: normal;
+  overflow-wrap: anywhere; /* best for long strings */
+  word-break: normal;
+
+  /* nicer wrapping for headings (modern browsers) */
+  text-wrap: balance;
+
+  /* keep it from touching edges */
+  padding-inline: 1rem;
+}
+
+/* Name */
+.hero-name {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #14ffec; /* neon green */
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+
+/* Role */
+.hero-role {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text);
+  opacity: 0.9;
+  margin-bottom: 1.6rem;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-size: 1.1rem;
+  color: var(--text-strong);
+  letter-spacing: 0.08em;
+}
+
+/* Accent word */
+.hero-tagline span {
+  color: #14ffec;
+  position: relative;
+}
+
+/* Optional underline accent */
+.hero-tagline span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: #14ffec;
+}
+
+.hero-tagline span:hover::after {
+  width: 60%;
+  transition: width 0.3s ease;
+}
+
 /*
 =============== 
 About Section
@@ -330,12 +409,8 @@ About Section
   margin-top: 15rem;
 }
 
-section[id] {
+/* section[id] {
   scroll-margin-top: 90px;
-}
-
-/* .divider {
-  height: clamp(2rem, 6vw, 5rem);
 } */
 
 .about-parent {
@@ -371,12 +446,22 @@ section[id] {
   color: var(--text-color);
 }
 
-h2 {
+/* h2 {
   font-family: var(--ff-primary);
   font-size: 1.5rem;
   color: white;
   text-align: center;
   letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  position: relative;
+} */
+h2 {
+  font-family: var(--ff-primary);
+  font-size: 1.5rem;
+  color: var(--text); /* not pure white */
+  text-align: center;
+  letter-spacing: 0.14em;
   margin-bottom: 30px;
   text-transform: uppercase;
   position: relative;
@@ -406,6 +491,13 @@ Project Section
 */
 
 /*  carousel container*/
+/* * {
+  outline: 1px solid red;
+}
+img {
+  max-width: 100%;
+  height: auto;
+} */
 .project-section {
   display: flex;
   flex-direction: column;
@@ -414,12 +506,16 @@ Project Section
 }
 .carousel-wrapper {
   width: 100%;
+  /* max-width: 1200px;
+  margin: 20px 20px 20px 20px; */
   max-width: 1200px;
-  margin: 20px 20px 20px 20px;
+  margin: 20px auto;
+  padding: 0 20px;
   overflow: hidden;
   position: relative;
   background: rgba(20, 255, 236, 0.1);
 }
+
 .carousel {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -507,10 +603,10 @@ cv Section
 ===============
 */
 
-@media screen and (max-width: 1280px) {
-  .hero {
-    height: 85vh;
-  }
+@media screen and (max-width: 1028px) {
+  /* .hero {
+    height: 100vh;
+  } */
   .hero-box {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr;
@@ -538,6 +634,13 @@ cv Section
   .carousel-item {
     min-width: 48%;
   }
+  /* .about-parent {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero {
+    height: 80vh;
+  } */
 }
 @media screen and (max-width: 800px) {
   .hero-info h2 {
@@ -561,9 +664,9 @@ cv Section
   }
 }
 @media screen and (max-width: 460px) {
-  .hero {
-    height: 100vh;
-  }
+  /* .hero {
+    height: 90vh;
+  } */
   .color-frame {
     width: 350px;
 
@@ -584,14 +687,14 @@ cv Section
     font-size: 1.6rem;
   }
 
-  .divider {
-    margin-top: 10rem;
-  }
+  /* .divider {
+    margin-top: 3.5rem;
+  } */
 }
 @media screen and (max-width: 390px) {
-  .hero {
-    height: 110vh;
-  }
+  /* .hero {
+    height: 95vh;
+  } */
   .color-frame {
     width: 330px;
     margin-left: -2%;
@@ -769,7 +872,7 @@ iframe {
   padding: 10px 10px;
   border-radius: 10px;
   cursor: pointer;
-  color: white;
+  color: var(--text-strong);
 }
 
 .lang-menu li:hover {

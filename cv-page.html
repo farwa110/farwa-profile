@@ -13,19 +13,44 @@
 
 <body>
     <div id="particles"></div>
-    <header>
+    <!-- <header>
         <div class="logo">
             <a href="index.html">
                 <img src="assets/logoreal.png" alt="logomain"></a>
         </div>
+    </header> -->
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logoreal.png" alt="logomain">
+            </a>
+        </div>
+
+        <!-- ADD THIS -->
+        <div class="lang-dropdown" id="langDropdown">
+            <button class="lang-current" id="langCurrent" aria-expanded="false">
+                <img id="langCurrentFlag" src="assets/gb.svg" alt="English" />
+                <span id="langCurrentLabel">EN</span>
+                <span class="chev">▾</span>
+            </button>
+            <ul class="lang-menu" id="langMenu">
+                <li data-lang="en"><img src="assets/gb.svg" alt="EN" /> English</li>
+                <li data-lang="da"><img src="assets/dk.svg" alt="DA" /> Dansk</li>
+            </ul>
+        </div>
     </header>
 
+
+
     <main>
-        <h1>MY CV</h1>
-        <iframe src="assets/cvinenglish.pdf"></iframe>
-        <p>
-            <a class="cv-button" href="assets/cvinenglish.pdf" download>Download CV (PDF)</a>
-        </p>
+        <h1 data-key="viewmycv">MY CV</h1>
+
+        <iframe id="cv-embed" src="assets/design-eng.pdf" width="100%" height="600px"></iframe>
+
+        <a id="cv-download" class="contact-btn" data-key="downloadbtn" href="assets/design-eng.pdf" download>
+            Download CV (PDF)
+        </a>
     </main>
 
     <footer>
@@ -57,6 +82,7 @@
     </footer>
     <script src="particle.js"></script>
     <script src="menu.js"></script>
+    <script src="lang.js"></script>
 </body>
 
 </html>

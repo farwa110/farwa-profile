@@ -52,6 +52,18 @@ const translations = {
     footerHeading: "Designed & Developed by Farwa",
     webshop: "A modern webshop built with Next.js, Tailwind CSS, and JavaScript. The application fetches product data from a public API and uses Zustand for global state management, including cart functionality. The solution focuses on performance, scalability, and a clean, user-friendly interface.",
     statensKunstmuseum: "A curator management system developed with Next.js, focusing on performance and efficient API communication. The platform uses Clerk for authentication, where logged-in users act as curators who can create events and add artworks. Visitors without login access can only view the content.",
+    viewmycv: "View my CV",
+    choosecv: "Choose the CV that matches the role you're hiring for.",
+    cvbutton: "View UX/UI CV ",
+    frontendcvbutton: "View Frontend CV",
+    lets: "Let's Work Together",
+    letsText: "Got a project or role in mind? I'd love to hear it!",
+    letsbtn: "Contact Me",
+    formName: "Your name",
+    formEmail: "Your email",
+    formMessage: "Your message",
+    viewmycv: "My CV",
+    downloadbtn: "Download CV (PDF)",
   },
 
   da: {
@@ -72,7 +84,10 @@ const translations = {
 
     valueTitle: "Hvordan kan jeg skabe værdi?",
     valueText: "Som nyuddannet multimediedesigner bidrager jeg med et friskt perspektiv, en positiv tilgang og kreative idéer, der kan skabe værdi for din virksomhed. Min baggrund i frontendudvikling gør, at jeg kan være med til at bygge engagerende, funktionelle og brugervenlige websites, mens min UX/UI-erfaring hjælper med at styrke brugeroplevelsen gennem velstruktureret og visuelt gennemført design.",
-
+    viewmycv: "Se mit CV",
+    choosecv: "Vælg det CV, der matcher den rolle, du ansætter til.",
+    cvbutton: "Se UX/UI CV",
+    frontendcvbutton: "Se Frontend CV",
     // ✅ Project section <p> (data-key)
     hitOrMiss: "Hit or Miss er et sjovt spil, hvor spilleren skal klikke på 5 blå rugbybolde for at vinde. Spillet er udviklet med HTML, CSS og JavaScript og giver en simpel, men engagerende brugeroplevelse.",
 
@@ -102,19 +117,46 @@ const translations = {
     footerHeading: "Designet og udviklet af Farwa",
     webshop: "En moderne webshop udviklet med Next.js, Tailwind CSS og JavaScript. Applikationen henter produktdata fra et offentligt API og anvender Zustand til global state management, herunder håndtering af indkøbskurven. Løsningen har fokus på performance, skalerbarhed og en ren, brugervenlig grænseflade.",
     statensKunstmuseum: "Et kuratorsystem udviklet med Next.js med fokus på performance og effektiv API-kommunikation. Platformen anvender Clerk til autentifikation, hvor brugere, der er logget ind, fungerer som kuratorer og kan oprette events samt tilføje kunstværker. Besøgende uden login har kun adgang til at se indholdet. Løsningen understøtter både dansk og engelsk og er opbygget med en klar adskillelse mellem frontend og backend for skalerbar og vedligeholdelsesvenlig API-integration.",
+    lets: "Lad os arbejde sammen",
+    letsText: "Har du et projekt eller en rolle i tankerne? Jeg vil meget gerne høre om det!",
+    letsbtn: "Kontakt mig",
+
+    formName: "Dit navn",
+    formEmail: "Din e-mail",
+    formMessage: "Din besked",
+    viewmycv: "Mit CV",
+    downloadbtn: "Downloade CV (PDF)",
   },
 };
 
 // 2) UPDATE PAGE TEXT
+// function setLanguage(lang) {
+//   document.querySelectorAll("[data-key]").forEach((el) => {
+//     const key = el.getAttribute("data-key");
+//     const value = translations[lang]?.[key];
+//     if (!value) return;
+
+//     // supports <br> and other safe inline HTML in translations
+//     if (value.includes("<")) el.innerHTML = value;
+//     else el.textContent = value;
+//   });
+
+//   localStorage.setItem("lang", lang);
+// }
 function setLanguage(lang) {
   document.querySelectorAll("[data-key]").forEach((el) => {
     const key = el.getAttribute("data-key");
     const value = translations[lang]?.[key];
     if (!value) return;
 
-    // supports <br> and other safe inline HTML in translations
-    if (value.includes("<")) el.innerHTML = value;
-    else el.textContent = value;
+    // ✅ Handle placeholder fields (inputs & textareas)
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.placeholder = value;
+    } else if (value.includes("<")) {
+      el.innerHTML = value;
+    } else {
+      el.textContent = value;
+    }
   });
 
   localStorage.setItem("lang", lang);
@@ -174,7 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lang = item.getAttribute("data-lang");
     setLanguage(lang);
     updateDropdownUI(lang);
-
+    updateCvForLang(lang); // to update CV links immediately on selection
     dropdown.classList.remove("open");
     currentBtn.setAttribute("aria-expanded", "false");
   });
@@ -193,3 +235,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// CV page language switcher
+const cvPdfs = {
+  "cv-embed": {
+    en: "assets/design-eng.pdf",
+    da: "assets/design-dansk.pdf",
+  },
+  "resume-embed": {
+    en: "assets/frontend-eng.pdf",
+    da: "assets/frontend-dansk.pdf",
+  },
+};
+
+// function updateCvForLang(lang) {
+//   const embed = document.getElementById("cv-embed");
+//   const download = document.getElementById("cv-download");
+//   if (!embed || !download) return; // only runs on cv-page, safe to ignore elsewhere
+
+//   const src = cvPdfs[lang] || cvPdfs["en"];
+//   embed.src = src;
+//   download.href = src;
+// }
+
+function updateCvForLang(lang) {
+  // Works for both cv-page and resume-page
+  Object.entries(cvPdfs).forEach(([embedId, pdfs]) => {
+    const embed = document.getElementById(embedId);
+    const download = document.getElementById(embedId.replace("embed", "download"));
+    if (!embed || !download) return; // skip if not on this page
+
+    const src = pdfs[lang] || pdfs["en"];
+    embed.src = src;
+    download.href = src;
+  });
+}
+// // Run on page load
+const savedLang = localStorage.getItem("lang") || "en";
+updateCvForLang(savedLang);

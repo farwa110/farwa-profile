@@ -237,26 +237,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // CV page language switcher
+// const cvPdfs = {
+//   "cv-embed": {
+//     en: "assets/design-eng.pdf",
+//     da: "assets/design-dansk.pdf",
+//   },
+//   "resume-embed": {
+//     en: "assets/front.pdf",
+//     da: "assets/frontenddansk.pdf",
+//   },
+// };
+
 const cvPdfs = {
   "cv-embed": {
-    en: "assets/design-eng.pdf",
-    da: "assets/design-dansk.pdf",
+    en: "/assets/design-eng.pdf",
+    da: "/assets/design-dansk.pdf",
   },
   "resume-embed": {
-    en: "assets/frontend-eng.pdf",
-    da: "assets/frontend-dansk.pdf",
+    en: "/assets/front.pdf",
+    da: "/assets/Frontend-cv.pdf",
   },
 };
-
-// function updateCvForLang(lang) {
-//   const embed = document.getElementById("cv-embed");
-//   const download = document.getElementById("cv-download");
-//   if (!embed || !download) return; // only runs on cv-page, safe to ignore elsewhere
-
-//   const src = cvPdfs[lang] || cvPdfs["en"];
-//   embed.src = src;
-//   download.href = src;
-// }
 
 function updateCvForLang(lang) {
   // Works for both cv-page and resume-page
@@ -271,5 +272,9 @@ function updateCvForLang(lang) {
   });
 }
 // // Run on page load
-const savedLang = localStorage.getItem("lang") || "en";
-updateCvForLang(savedLang);
+// const savedLang = localStorage.getItem("lang") || "en";
+// updateCvForLang(savedLang);
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "en";
+  updateCvForLang(savedLang);
+});

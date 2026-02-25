@@ -40,7 +40,7 @@ const translations = {
 
     comingUpHolbaekDev: "This project uses dynamic data fetching from Supabase and is built with Astro. The single view and artist lists are fetched via an API, and the pages are generated dynamically using map, creating flexible pages for different artists.",
 
-    // ✅ UX/UI section <p> (data-key)
+    //  UX/UI section <p> (data-key)
     distortionsRedesign: "Conducted user research and testing to improve website usability. Created wireframes and prototypes to find the best digital solution for the target audience while maintaining the brand’s authenticity and following their design guidelines. This was a group project.",
 
     kidsAidClownsUx: "Created a reusable design system and style tile for Coming Up, a volunteer organization under Holbæk Kommune supporting youth life in Holbæk. The design reflects the organization’s concept and essence, supported by user research and testing for consistency across platforms. This was a group project.",
@@ -88,7 +88,7 @@ const translations = {
     choosecv: "Vælg det CV, der matcher den rolle, du ansætter til.",
     cvbutton: "Se UX/UI CV",
     frontendcvbutton: "Se Frontend CV",
-    // ✅ Project section <p> (data-key)
+    //  Project section <p> (data-key)
     hitOrMiss: "Hit or Miss er et sjovt spil, hvor spilleren skal klikke på 5 blå rugbybolde for at vinde. Spillet er udviklet med HTML, CSS og JavaScript og giver en simpel, men engagerende brugeroplevelse.",
 
     sushiMaster: "Sushi Master er en hjemmeside for sushi-elskere, der tilbyder DIY-sushiopskrifter og præsenterer nogle af de mest autentiske og populære sushi-steder i København. Projektet er bygget med HTML, CSS og JavaScript og fungerer som en samlet guide med både tips til sushitilberedning og anbefalinger af lokale restauranter.",
@@ -105,7 +105,7 @@ const translations = {
 
     comingUpHolbaekDev: "Dette projekt anvender dynamisk datahentning fra Supabase og er kodet med Astro. Artistlister og individuelle visninger hentes via API, og siderne genereres dynamisk ved brug af map-funktioner, hvilket giver en fleksibel og skalerbar løsning.",
 
-    // ✅ UX/UI section <p> (data-key)
+    //  UX/UI section <p> (data-key)
     distortionsRedesign: "Jeg gennemførte brugerundersøgelser og tests for at forbedre hjemmesidens brugervenlighed. Jeg lavede wireframes og prototyper for at finde den bedste digitale løsning til målgruppen, samtidig med at brandets autenticitet blev bevaret og deres designguide blev fulgt. Dette var et gruppeprojekt.",
 
     kidsAidClownsUx: "Jeg udviklede et genanvendeligt design system og en style tile til Coming Up, en frivillig organisation under Holbæk Kommune, som støtter unges liv i Holbæk. Designet afspejler organisationens koncept og essens og er understøttet af brugerresearch og tests for at sikre konsistens på tværs af platforme. Dette var et gruppeprojekt.",
@@ -130,19 +130,7 @@ const translations = {
 };
 
 // 2) UPDATE PAGE TEXT
-// function setLanguage(lang) {
-//   document.querySelectorAll("[data-key]").forEach((el) => {
-//     const key = el.getAttribute("data-key");
-//     const value = translations[lang]?.[key];
-//     if (!value) return;
 
-//     // supports <br> and other safe inline HTML in translations
-//     if (value.includes("<")) el.innerHTML = value;
-//     else el.textContent = value;
-//   });
-
-//   localStorage.setItem("lang", lang);
-// }
 function setLanguage(lang) {
   document.querySelectorAll("[data-key]").forEach((el) => {
     const key = el.getAttribute("data-key");
@@ -236,18 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// CV page language switcher
-// const cvPdfs = {
-//   "cv-embed": {
-//     en: "assets/design-eng.pdf",
-//     da: "assets/design-dansk.pdf",
-//   },
-//   "resume-embed": {
-//     en: "assets/front.pdf",
-//     da: "assets/frontenddansk.pdf",
-//   },
-// };
-
 const cvPdfs = {
   "cv-embed": {
     en: "/assets/design-eng.pdf",
@@ -272,8 +248,7 @@ function updateCvForLang(lang) {
   });
 }
 // // Run on page load
-// const savedLang = localStorage.getItem("lang") || "en";
-// updateCvForLang(savedLang);
+
 document.addEventListener("DOMContentLoaded", () => {
   const savedLang = localStorage.getItem("lang") || "en";
   updateCvForLang(savedLang);

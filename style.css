@@ -1130,3 +1130,65 @@ Contact form Section
   margin: 1.5rem auto 3rem;
   text-decoration: none;
 }
+
+.thank-you-section {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.thank-you-card {
+  background: rgba(20, 255, 236, 0.05);
+  border: 1px solid rgba(20, 255, 236, 0.8);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 100%;
+}
+
+.thank-you-icon {
+  margin-bottom: 1.5rem;
+  color: #00bcd4; /* use your accent color */
+}
+
+.thank-you-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.thank-you-tag {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
+  font-size: 0.9rem;
+}
+
+.thank-you-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  background: #00bcd4;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.thank-you-button:hover {
+  background: #00a0b5;
+}
+#thankyou-tagline {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+#thankyou-link {
+  color: #14ffec;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="particle.css">
+    <link rel="icon" type="image/x-icon" href="assets/portfolio.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="particles"></div>
+    <!-- navbar -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/logoreal.png" alt="logomain"></a>
+
+        </div>
+        <nav>
+            <!-- <ul class="menu">
+                <li><a href="#home" data-key="navHome">Home</a></li>
+                <li><a href="#about" data-key="navAbout">About</a></li>
+                <li><a href="#project" data-key="navProjects">My-Projects</a></li>
+                <li><a href="#contact" data-key="navContact">Contact me</a></li>
+            </ul> -->
+            <!-- <--- langue dropdown menu -->
+            <div class="lang-dropdown" id="langDropdown">
+                <button class="lang-current" id="langCurrent" type="button" aria-haspopup="listbox"
+                    aria-expanded="false">
+                    <img id="langCurrentFlag" src="assets/gb.svg" alt="English">
+                    <span id="langCurrentLabel">EN</span>
+                    <span class="chev">▾</span>
+                </button>
+
+                <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Language">
+                    <li role="option" data-lang="en">
+                        <img src="assets/gb.svg" alt="English">
+                        <span>English</span>
+                    </li>
+                    <li role="option" data-lang="da">
+                        <img src="assets/dk.svg" alt="Dansk">
+                        <span>Dansk</span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="thank-you-section">
+        <div class="thank-you-card">
+            <h2>Thank you! 💌</h2>
+            <p id="thankyou-tagline">Your message has been sent successfully.</p>
+            <a id="thankyou-link" href="/">Go back to homepage</a>
+        </div>
+    </section>
+
+
+
+    <script src="menu.js"></script>
+    <script src="particle.js"></script>
+    <script src="script.js"></script>
+    <script src="lang.js"></script>
+</body>
+
+</html>

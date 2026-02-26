@@ -64,6 +64,9 @@ const translations = {
     formMessage: "Your message",
     viewmycv: "My CV",
     downloadbtn: "Download CV (PDF)",
+    newthankyou: "Thank you for reaching out!",
+    sucessMessage: "Your message has been sent successfully!",
+    backhome: "Back to Homepage",
   },
 
   da: {
@@ -120,12 +123,14 @@ const translations = {
     lets: "Lad os arbejde sammen",
     letsText: "Har du et projekt eller en rolle i tankerne? Jeg vil meget gerne høre om det!",
     letsbtn: "Kontakt mig",
-
+    newthankyou: "Tak for din henvendelse!",
     formName: "Dit navn",
     formEmail: "Din e-mail",
     formMessage: "Din besked",
     viewmycv: "Mit CV",
     downloadbtn: "Downloade CV (PDF)",
+    sucessMessage: "Din besked er sendt!",
+    backhome: "Tilbage til forsiden",
   },
 };
 

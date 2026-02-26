@@ -432,13 +432,13 @@
         </p>
 
         <form class="contact-form" action="https://formspree.io/f/mreajbwa" method="POST">
+            <input type="hidden" name="_next" value="/thankyou.html" />
 
             <input type="text" name="name" placeholder="Your name" required />
             <input type="email" name="email" placeholder="Your email" required />
             <textarea name="message" placeholder="Your message" rows="5" required></textarea>
 
-            <!-- Redirect after success -->
-            <input type="hidden" name="_next" value="https://farwa-profile.vercel.app/thankyou.html">
+
 
             <button type="submit" class="contact-btn">
                 Send message

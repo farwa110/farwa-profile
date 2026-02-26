@@ -52,3 +52,25 @@ document.addEventListener("DOMContentLoaded", function () {
   initCarousel("projects-carousel", "projects-dots");
   initCarousel("uxui-carousel", "uxui-dots");
 });
+
+const form = document.querySelector("#contactForm");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const res = await fetch("https://formspree.io/f/mreajbwa", {
+    method: "POST",
+    body: formData,
+    headers: {
+      Accept: "application/json",
+    },
+  });
+
+  if (res.ok) {
+    window.location.href = "/thankyou.html";
+  } else {
+    alert("Oops! Something went wrong. Please try again.");
+  }
+});

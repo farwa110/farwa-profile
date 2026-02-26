@@ -426,14 +426,24 @@
     <!-- Divider -->
     <div class="divider"></div>
     <section class="contact-section">
-        <h2 class="section-title" data-key="lets">Let's Work Together</h2>
-        <p class="section-subtitle" data-key="letsText">Got a project or role in mind? I'd love to hear it.</p>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-subtitle">
+            Got a project or role in mind? I'd love to hear it.
+        </p>
 
-        <form class="contact-form" action="https://formspree.io/f/yourID" method="POST">
-            <input type="text" name="name" placeholder="Your name" data-key="formName" required />
-            <input type="email" name="email" placeholder="Your email" data-key="formEmail" required />
-            <textarea name="message" placeholder="Your message" data-key="formMessage" rows="5" required></textarea>
-            <button type="submit" class="contact-btn" data-key="letsbtn">Send message</button>
+        <form class="contact-form" action="https://formspree.io/f/mreajbwa" method="POST">
+
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+
+            <!-- Redirect after success -->
+            <input type="hidden" name="_next" value="https://farwa-profile.vercel.app/thankyou.html">
+
+            <button type="submit" class="contact-btn">
+                Send message
+            </button>
+
         </form>
     </section>
 
